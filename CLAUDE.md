@@ -38,8 +38,49 @@ This file is my reference throughout development. It contains key decisions, cur
 - [x] Add click-to-call functionality
 - [x] Update Edit AI with inbound/outbound script sections
 
-### Upcoming Milestones (Milestone 4 is NEXT)
-- Milestone 4: Edit AI Functionality (script modals, voice selector, knowledge upload)
+### Milestone 4: Edit AI Functionality - Complete (COMPLETED)
+**Key Design: Simplicity with smart filters + Test AI**
+
+**Filter UI:**
+- Type filter: All | Voice | Text
+- Direction filter: All | Inbound | Outbound
+
+**Pre-Made Scripts (including cold outreach):**
+- Voice Inbound: Greeting, After Hours
+- Voice Outbound: Appointment Reminder, Follow-up Call, Cold Call
+- Text Inbound: Auto-Reply, After Hours Reply
+- Text Outbound: Missed Call, Appointment Confirm, Follow-up, Cold Message
+
+**Script Triggers:**
+- Event-triggered: Greeting, After Hours, Missed Call, Confirmation (no schedule)
+- Proactive/Scheduled: Cold outreach, Follow-ups (needs time window + max/day)
+
+**Edit + Test Modal (Unified):**
+- Separate Test (Play) and Edit (Pencil) buttons per script
+- Both open same modal with Edit/Test toggle at top
+- Edit mode: Chat with AI to refine script
+- Test mode: Simulate conversation with AI
+- Voice scripts: Optional "Play Audio" button (uses voice plays)
+
+**Free Tier (resets monthly, 90%+ margins):**
+- AI Edits: 100/month → +10 for $1 after
+- Testing: Unlimited (hidden 50/day cap prevents abuse)
+- Voice Plays: 50/month → +20 for $2 after (voice plans only)
+
+**UI Layout (compact, no-scroll):**
+- Compact filters inline (Type: All/Voice/Text, Direction: All/In/Out)
+- Scripts list with scrollable area if needed
+- Voice Selection + Monthly Usage side by side in one row
+- Text plans show: "100 edits" | Voice plans: "100 edits • 50 voice plays"
+
+- [x] Filter UI + pre-made scripts (including cold outreach)
+- [x] Unified Edit+Test modal with toggle
+- [x] Scheduling UI for proactive scripts
+- [x] Delete/toggle scripts + Voice selector
+- [x] Data tab (Knowledge Base + Contacts)
+- [x] Free tier: 100 edits, unlimited tests, 50 voice plays
+
+### Upcoming Milestones (Milestone 5 is NEXT)
 - Milestone 5: AI Backend (OpenAI, embeddings, chat-edit API)
 - Milestone 6: Telecom Integration (Telnyx SMS, Vapi Voice AI)
 - Milestone 7: Automations (missed call text, drip campaigns)
@@ -71,13 +112,18 @@ This file is my reference throughout development. It contains key decisions, cur
 ### Billing Architecture (3 Streams)
 1. Platform subscription (Stripe) - $50/$75/$100
 2. Telecom usage (prepaid balance) - pay as you go
-3. AI usage (after free tier) - 50 edits + 10 regens free
+3. AI usage (after free tier) - 100 edits + 50 voice plays/month, unlimited testing
 
-### Dashboard Structure (4 Tabs Only)
+### Dashboard Structure (5 Tabs)
 1. Home - Stats + activity feed
 2. Inbox - Conversations (calls + texts)
-3. Edit AI - Scripts, knowledge, contacts, voice
-4. Account - Plan, balance, settings
+3. Edit AI - Scripts + Voice only (simple, focused)
+4. Data - Knowledge Base + Contacts (one-time uploads)
+5. Account - Plan, balance, settings
+
+**Design Philosophy:**
+- Edit AI = Active configuration (scripts you edit frequently)
+- Data = Passive uploads (knowledge base, contacts - set once)
 
 ### Onboarding (Required vs Skippable)
 Required: Sign up, business info, plan, phone, payment, go live
@@ -128,8 +174,10 @@ Clicking any stat card opens a slide-over panel showing:
 
 ### Free Tier Tracking
 ```
-organizations.free_edits_remaining (default 50)
-organizations.free_regens_remaining (default 10)
+organizations.ai_edits_remaining (default 100, resets monthly)
+organizations.voice_plays_remaining (default 50, resets monthly)
+organizations.daily_tests_count (resets daily, hidden cap at 50)
+organizations.last_test_reset (timestamp for daily reset)
 ```
 
 ## Files Created
@@ -137,6 +185,15 @@ organizations.free_regens_remaining (default 10)
 ### Milestone 1
 - `/CLAUDE.md` - This file
 - `/PLAN.md` - Complete implementation plan
+
+### Milestone 4
+- `/src/components/edit/script-modal.tsx` - Unified Edit+Test modal with toggle
+- `/src/components/edit/voice-selector-modal.tsx` - Voice selection with audio preview
+- `/src/components/edit/knowledge-upload-modal.tsx` - File/URL/text knowledge upload
+- `/src/components/edit/contacts-modal.tsx` - Contact list with import functionality
+- `/src/app/dashboard/data/page.tsx` - Data page (Knowledge Base + Contacts)
+- `/src/components/ui/table.tsx` - shadcn table component
+- `/src/components/ui/radio-group.tsx` - shadcn radio group component
 
 ## Git Commits
 

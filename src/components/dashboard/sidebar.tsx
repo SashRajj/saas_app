@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { Home, MessageSquare, Pencil, Settings } from "lucide-react";
+import { Home, MessageSquare, Pencil, Database, Settings } from "lucide-react";
 
 const navItems = [
   {
@@ -20,6 +20,11 @@ const navItems = [
     title: "Edit AI",
     href: "/dashboard/edit",
     icon: Pencil,
+  },
+  {
+    title: "Data",
+    href: "/dashboard/data",
+    icon: Database,
   },
   {
     title: "Account",

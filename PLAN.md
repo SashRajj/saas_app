@@ -22,7 +22,9 @@
 | **Full AI Employee** | $100/mo | Everything from both tiers |
 
 **All tiers include:**
-- 50 free script edits + 10 regenerations
+- 100 AI edits/month (resets monthly)
+- Unlimited testing (hidden 50/day cap)
+- 50 voice plays/month (voice plans only)
 - Knowledge base upload
 - Contact management
 - Phone number ($1/mo usage)
@@ -74,13 +76,21 @@ $50/mo Text | $75/mo Voice | $100/mo Full
 - Independent pause: text ≠ voice
 ```
 
-### Stream 3: AI Usage (After Free Tier)
+### Stream 3: AI Usage (Monthly Limits)
 ```
-- Free: 50 script edits + 10 regenerations
-- After free tier: $0.05/edit (billed to usage balance)
-- Counts:
-  • Edit = user types request, AI responds
-  • Regeneration = user clicks "Try Again"
+Included with subscription (resets monthly):
+- AI Edits: 100/month
+- Testing: Unlimited (hidden 50/day cap prevents abuse)
+- Voice Plays: 50/month (voice/full plans only)
+
+Need more? Pay as you go:
+- +10 AI Edits: $1
+- +20 Voice Plays: $2
+
+Margins (guaranteed 90%+):
+- Text $50:   ~$3.30 cost → $46.70 profit (93.4%)
+- Voice $75:  ~$6.30 cost → $68.70 profit (91.6%)
+- Full $100:  ~$6.30 cost → $93.70 profit (93.7%)
 ```
 
 ---
@@ -172,7 +182,7 @@ $50/mo Text | $75/mo Voice | $100/mo Full
 │  └─────────────────────────────────────────────────────────────────────────┘│
 │                                                                              │
 │  ─────────────────────────────────────────────────────────────────────────  │
-│  ✨ Free edits: 47/50  •  Regenerations: 9/10                               │
+│  ✨ 92 edits remaining  •  47 voice plays remaining                         │
 └──────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -968,14 +978,70 @@ scheduled_jobs (
 
 **Git commit**: `feat: stats-drilldown - inbound/outbound breakdown, user intervention`
 
-### Milestone 4: Edit AI Functionality (Modals & Chat Interface)
-- [ ] Create script edit modal with chat-based AI editing
-- [ ] Build voice selector modal with audio previews
-- [ ] Build knowledge base upload modal (PDF, URL, text input)
-- [ ] Build contacts list modal with import functionality
-- [ ] Add free tier tracking and decrement
+### Milestone 4: Edit AI Functionality (Filter-Based Design) ✅ COMPLETED
+**Philosophy: Simplicity with smart filters**
 
-**Git commit**: `feat: edit-ai-functionality - script editing, voice selection, knowledge upload`
+**Dashboard Structure:**
+- Edit AI tab → Scripts + Voice (with filter controls)
+- Data tab → Knowledge Base + Contacts (one-time uploads)
+
+**Filter-Based Script View:**
+- Two simple filter rows at top:
+  - Type: All | Voice | Text
+  - Direction: All | Inbound | Outbound
+- Scripts filtered in real-time based on selection
+- Clean, unified list view (no nested tabs)
+
+**Pre-Made Scripts (Ready to Deploy):**
+- Voice Inbound: Greeting (during hours), After Hours Message
+- Voice Outbound: Appointment Reminder, Follow-up Call, Cold Call
+- Text Inbound: Auto-Reply, After Hours Reply
+- Text Outbound: Missed Call Text, Appointment Confirmation, Follow-up Message, Cold Message
+
+**Script Types by Trigger:**
+1. Event-Triggered (automatic, no schedule):
+   - When someone calls → Greeting, After Hours
+   - After missed call → Missed Call Text
+   - After booking → Appointment Confirmation
+   - When someone texts → Auto-Reply, After Hours Reply
+
+2. Proactive/Scheduled (needs frequency + timeslot):
+   - Cold outreach (calls/texts) → User sets schedule
+   - Follow-up campaigns → Day 1, 7, 21, 30
+   - Appointment reminders → 1 day before
+
+**Scheduling Settings (for proactive scripts):**
+- Time window: "Send between 9am-5pm"
+- Max per day: "Up to 20 contacts/day"
+- Days: Mon-Fri, weekdays only, etc.
+
+**Test AI Feature:**
+- Test button on each script card
+- Opens simulation modal showing AI response preview
+- Voice: Audio preview of how AI sounds
+- Text: Mock conversation preview
+- Uses free test credits
+
+**Simplified Free Tier:**
+| Action | Free | After Free |
+|--------|------|------------|
+| Create scripts | Unlimited | Unlimited |
+| AI Edits | 30 | ~$0.05/edit |
+| AI Tests | 20 | ~$0.02/test |
+
+**Completed:**
+- [x] Filter UI (Type + Direction) for script list
+- [x] Pre-made scripts for all categories (including cold outreach)
+- [x] Create script modal with name editing & category selection
+- [x] Script edit modal with chat-based AI editing
+- [x] Test AI button + simulation modal
+- [x] Scheduling UI for proactive scripts
+- [x] Delete script and toggle on/off
+- [x] Voice selector modal
+- [x] Data tab for Knowledge Base + Contacts
+- [x] Free tier: Edits (30) + Tests (20)
+
+**Git commit**: `feat: edit-ai-complete - test AI, scheduling, cold outreach`
 
 ### Milestone 5: AI Backend
 - [ ] Setup OpenAI integration (GPT-4o-mini)
