@@ -13,16 +13,13 @@ export default function EditAIPage() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
-        {/* Voice AI Card */}
         <Card>
           <CardHeader>
             <div className="flex items-center gap-2">
               <Mic className="h-5 w-5" />
               <CardTitle className="text-lg">Voice AI</CardTitle>
             </div>
-            <CardDescription>
-              Customize how your AI answers calls
-            </CardDescription>
+            <CardDescription>Customize how your AI answers calls</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="text-sm text-muted-foreground">
@@ -37,16 +34,13 @@ export default function EditAIPage() {
           </CardContent>
         </Card>
 
-        {/* Text AI Card */}
         <Card>
           <CardHeader>
             <div className="flex items-center gap-2">
               <MessageSquare className="h-5 w-5" />
               <CardTitle className="text-lg">Text AI</CardTitle>
             </div>
-            <CardDescription>
-              Customize your automated text messages
-            </CardDescription>
+            <CardDescription>Customize your automated text messages</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="text-sm text-muted-foreground">
@@ -60,16 +54,13 @@ export default function EditAIPage() {
           </CardContent>
         </Card>
 
-        {/* Knowledge Base Card */}
         <Card>
           <CardHeader>
             <div className="flex items-center gap-2">
               <BookOpen className="h-5 w-5" />
               <CardTitle className="text-lg">Knowledge Base</CardTitle>
             </div>
-            <CardDescription>
-              Help your AI learn about your business
-            </CardDescription>
+            <CardDescription>Help your AI learn about your business</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="text-sm text-muted-foreground">
@@ -79,16 +70,13 @@ export default function EditAIPage() {
           </CardContent>
         </Card>
 
-        {/* Contacts Card */}
         <Card>
           <CardHeader>
             <div className="flex items-center gap-2">
               <Users className="h-5 w-5" />
               <CardTitle className="text-lg">Contacts</CardTitle>
             </div>
-            <CardDescription>
-              Manage your contact list
-            </CardDescription>
+            <CardDescription>Manage your contact list</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="text-sm text-muted-foreground">
@@ -102,7 +90,6 @@ export default function EditAIPage() {
         </Card>
       </div>
 
-      {/* Free Tier Info */}
       <div className="text-sm text-muted-foreground border-t pt-4">
         Free edits: 50/50 remaining | Regenerations: 10/10 remaining
       </div>

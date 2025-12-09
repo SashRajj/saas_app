@@ -14,10 +14,7 @@ export default function InboxPage() {
       </div>
 
       <div className="flex items-center gap-4">
-        <Input
-          placeholder="Search conversations..."
-          className="max-w-sm"
-        />
+        <Input placeholder="Search conversations..." className="max-w-sm" />
       </div>
 
       <Tabs defaultValue="all" className="w-full">

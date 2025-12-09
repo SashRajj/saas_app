@@ -14,33 +14,25 @@ export default function AccountPage() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
-        {/* Plan Card */}
         <Card>
           <CardHeader>
             <CardTitle className="text-lg">Your Plan</CardTitle>
-            <CardDescription>
-              Current subscription details
-            </CardDescription>
+            <CardDescription>Current subscription details</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
               <p className="text-2xl font-bold">Full AI Employee</p>
               <p className="text-muted-foreground">$100/month</p>
             </div>
-            <p className="text-sm text-muted-foreground">
-              Next billing: --
-            </p>
+            <p className="text-sm text-muted-foreground">Next billing: --</p>
             <Button variant="outline">Change Plan</Button>
           </CardContent>
         </Card>
 
-        {/* Balance Card */}
         <Card>
           <CardHeader>
             <CardTitle className="text-lg">Usage Balance</CardTitle>
-            <CardDescription>
-              Prepaid balance for calls and texts
-            </CardDescription>
+            <CardDescription>Prepaid balance for calls and texts</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
@@ -57,13 +49,10 @@ export default function AccountPage() {
           </CardContent>
         </Card>
 
-        {/* Connected Accounts Card */}
         <Card>
           <CardHeader>
             <CardTitle className="text-lg">Connected Accounts</CardTitle>
-            <CardDescription>
-              Your linked services
-            </CardDescription>
+            <CardDescription>Your linked services</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="flex items-center justify-between">
@@ -83,13 +72,10 @@ export default function AccountPage() {
           </CardContent>
         </Card>
 
-        {/* Controls Card */}
         <Card>
           <CardHeader>
             <CardTitle className="text-lg">Controls</CardTitle>
-            <CardDescription>
-              Turn features on or off
-            </CardDescription>
+            <CardDescription>Turn features on or off</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="flex items-center justify-between">
@@ -110,7 +96,6 @@ export default function AccountPage() {
         </Card>
       </div>
 
-      {/* Cancel Subscription */}
       <div className="pt-4">
         <Button variant="ghost" className="text-destructive hover:text-destructive">
           Cancel Subscription
