@@ -19,24 +19,31 @@ This file is my reference throughout development. It contains key decisions, cur
 - [x] Build landing page with pricing
 - [x] Add terms + privacy pages
 - [x] Initialize git repo
+- [x] Wire up database sync (Clerk → Supabase)
 
-### Milestone 2: Billing System (NEXT)
-- [ ] Create Stripe products (3 tiers)
-- [ ] Implement checkout with 7-day trial
-- [ ] Build subscription management (change, cancel)
-- [ ] Implement prepaid balance system
-- [ ] Add auto-reload functionality
-- [ ] Build usage tracking
-- [ ] Setup Stripe webhooks
-- [ ] Build Account page UI
+### Milestone 2: Dashboard UI (NEXT)
+- [ ] Build Home page with stats cards (placeholder data)
+- [ ] Build activity feed component
+- [ ] Build Inbox page with conversation list
+- [ ] Build conversation detail view
+- [ ] Build Account page UI (settings, profile)
+- [ ] Polish all dashboard components
+
+### Milestone 3: Edit AI Page (Scripts, Knowledge, Voice)
+- [ ] Build Edit AI page layout with sections
+- [ ] Create script card components (voice greeting, missed call text, follow-ups)
+- [ ] Implement chat-based editing interface
+- [ ] Build knowledge base upload UI
+- [ ] Build voice selector with preview
+- [ ] Build contacts list and import
 
 ### Upcoming Milestones
-- Milestone 3: Telecom Integration
-- Milestone 4: AI & Knowledge
-- Milestone 5: Automations
-- Milestone 6: Onboarding
-- Milestone 7: Dashboard
-- Milestone 8: Polish & Launch
+- Milestone 4: AI Backend (OpenAI, embeddings, chat-edit API)
+- Milestone 5: Telecom Integration (Telnyx SMS, Vapi Voice AI)
+- Milestone 6: Automations (missed call text, drip campaigns)
+- Milestone 7: Billing System (Stripe subscriptions, prepaid balance)
+- Milestone 8: Onboarding Flow (multi-step wizard)
+- Milestone 9: Polish & Launch
 
 ## Key Technical Decisions
 

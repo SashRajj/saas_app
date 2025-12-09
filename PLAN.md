@@ -932,101 +932,111 @@ scheduled_jobs (
 
 ## Implementation Milestones
 
-### Milestone 1: Foundation
-- [ ] Initialize Next.js 14 + TypeScript
-- [ ] Setup Tailwind + shadcn/ui
-- [ ] Configure Supabase + run migrations
-- [ ] Setup Clerk with Google OAuth
-- [ ] Create 4-tab dashboard layout shell
-- [ ] Build landing page with pricing
-- [ ] Add terms + privacy pages
-- [ ] Initialize git repo
+### Milestone 1: Foundation ✅ COMPLETED
+- [x] Initialize Next.js 14 + TypeScript
+- [x] Setup Tailwind + shadcn/ui
+- [x] Configure Supabase + run migrations
+- [x] Setup Clerk with Google OAuth
+- [x] Create 4-tab dashboard layout shell
+- [x] Build landing page with pricing
+- [x] Add terms + privacy pages
+- [x] Initialize git repo
+- [x] Wire up database sync (Clerk → Supabase)
 
 **Git commit**: `feat: foundation - auth, database, dashboard shell, landing page`
 
-### Milestone 2: Billing System
-- [ ] Create Stripe products (3 tiers)
-- [ ] Implement checkout with 7-day trial
-- [ ] Build subscription management (change, cancel)
-- [ ] Implement prepaid balance system
-- [ ] Add auto-reload functionality
-- [ ] Build usage tracking
-- [ ] Setup Stripe webhooks
-- [ ] Build Account page UI
+### Milestone 2: Dashboard UI (NEXT)
+- [ ] Build Home page with stats cards (placeholder data)
+- [ ] Build activity feed component
+- [ ] Build Inbox page with conversation list
+- [ ] Build conversation detail view (call transcripts, text threads)
+- [ ] Build Account page UI (settings, profile)
+- [ ] Add responsive mobile design
+- [ ] Polish all dashboard components
 
-**Git commit**: `feat: billing - subscriptions, prepaid balance, usage tracking`
+**Git commit**: `feat: dashboard - home stats, inbox, account UI`
 
-### Milestone 3: Telecom Integration
+### Milestone 3: Edit AI Page (Scripts, Knowledge, Voice)
+- [ ] Build Edit AI page layout with sections
+- [ ] Create script card components (voice greeting, missed call text, follow-ups)
+- [ ] Implement chat-based editing interface (AI-assisted script editing)
+- [ ] Build knowledge base upload UI (PDF, URL, text input)
+- [ ] Build voice selector component with preview
+- [ ] Build contacts list and import UI
+- [ ] Add free tier tracking display (50 edits, 10 regens)
+
+**Git commit**: `feat: edit-ai - scripts, knowledge base, voice selection, contacts`
+
+### Milestone 4: AI Backend
+- [ ] Setup OpenAI integration (GPT-4o-mini)
+- [ ] Implement PDF text extraction
+- [ ] Implement URL scraping
+- [ ] Generate vector embeddings (pgvector)
+- [ ] Build AI script generation API
+- [ ] Implement chat-edit API (streaming responses)
+- [ ] Track and decrement free tier usage
+
+**Git commit**: `feat: ai-backend - knowledge processing, chat editing API`
+
+### Milestone 5: Telecom Integration
 - [ ] Setup Telnyx account + API
 - [ ] Implement phone number provisioning
 - [ ] Build inbound SMS webhook handler
 - [ ] Implement outbound SMS
-- [ ] Handle STOP opt-out compliance
+- [ ] Handle STOP opt-out compliance (TCPA)
 - [ ] Setup Vapi account + API
-- [ ] Configure voice AI assistant
+- [ ] Configure voice AI assistant with scripts
 - [ ] Build inbound call webhook handler
 - [ ] Implement call transfer
-- [ ] Add call recording + transcription
+- [ ] Add call recording + transcription storage
 
 **Git commit**: `feat: telecom - telnyx SMS, vapi voice AI, call handling`
 
-### Milestone 4: AI & Knowledge
-- [ ] Build knowledge upload UI (PDF, URL, text)
-- [ ] Implement PDF text extraction
-- [ ] Implement URL scraping
-- [ ] Generate vector embeddings (pgvector)
-- [ ] Build AI script generation
-- [ ] Implement chat-based editing interface
-- [ ] Add free tier tracking
-- [ ] Build voice selection UI
-- [ ] Build Edit AI page
-
-**Git commit**: `feat: ai - knowledge base, chat editing, voice selection`
-
-### Milestone 5: Automations
-- [ ] Setup BullMQ + Redis
+### Milestone 6: Automations
+- [ ] Setup BullMQ + Upstash Redis
 - [ ] Implement missed call → text automation
 - [ ] Build drip campaign system (Day 1, 7, 21, 30)
-- [ ] Add pause/resume per organization
+- [ ] Add pause/resume controls per organization
 - [ ] Implement scheduled job tracking
-- [ ] Add low balance alerts
+- [ ] Add low balance email alerts
 
 **Git commit**: `feat: automations - drip campaigns, missed call text`
 
-### Milestone 6: Onboarding
+### Milestone 7: Billing System (Stripe)
+- [ ] Create Stripe products (3 tiers: $50, $75, $100)
+- [ ] Implement checkout with 7-day trial
+- [ ] Build subscription management (change plan, cancel)
+- [ ] Implement prepaid balance system for usage
+- [ ] Add auto-reload functionality
+- [ ] Build usage tracking and billing
+- [ ] Setup Stripe webhooks
+- [ ] Connect billing to Account page
+
+**Git commit**: `feat: billing - subscriptions, prepaid balance, usage tracking`
+
+### Milestone 8: Onboarding Flow
 - [ ] Build multi-step wizard component
-- [ ] Implement Google OAuth step
-- [ ] Build business info step
-- [ ] Build plan selection step
-- [ ] Build phone provisioning step
-- [ ] Build payment step
-- [ ] Build knowledge upload step (skippable)
-- [ ] Build voice selection step (skippable)
-- [ ] Build contact import step (skippable)
-- [ ] Build preview + go live step
+- [ ] Business info step (name, industry)
+- [ ] Plan selection step
+- [ ] Phone number provisioning step
+- [ ] Payment step (Stripe)
+- [ ] Knowledge upload step (skippable)
+- [ ] Voice selection step (skippable)
+- [ ] Contact import step (skippable)
+- [ ] Preview + go live step
 
 **Git commit**: `feat: onboarding - complete wizard flow`
 
-### Milestone 7: Dashboard
-- [ ] Build Home page (stats + activity)
-- [ ] Build Inbox page (conversation list)
-- [ ] Build conversation detail view
-- [ ] Implement feature gating by plan
-- [ ] Add real-time updates (Supabase Realtime)
-- [ ] Polish all UI components
-
-**Git commit**: `feat: dashboard - home, inbox, complete UI`
-
-### Milestone 8: Polish & Launch
-- [ ] Implement Google Calendar sync
+### Milestone 9: Polish & Launch
+- [ ] Implement Google Calendar sync for appointments
 - [ ] Add email notifications (Resend)
+- [ ] Implement feature gating by plan tier
+- [ ] Add real-time updates (Supabase Realtime)
 - [ ] Complete error handling
-- [ ] Mobile responsive design
 - [ ] End-to-end testing
-- [ ] Bug fixes
-- [ ] Performance optimization
+- [ ] Bug fixes & performance optimization
 
-**Git commit**: `feat: polish - calendar sync, emails, mobile, testing`
+**Git commit**: `feat: polish - calendar sync, emails, testing, launch ready`
 
 ---
 
