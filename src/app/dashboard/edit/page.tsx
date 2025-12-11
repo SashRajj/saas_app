@@ -479,80 +479,73 @@ export default function EditAIPage() {
               <p>No scripts match your filters</p>
             </div>
           ) : (
-            <div className="space-y-3">
+            <div className="space-y-2">
               {filteredScripts.map((script) => (
                 <div
                   key={script.id}
                   className={cn(
-                    "flex items-center gap-4 p-4 border rounded-lg transition-colors",
+                    "flex items-center gap-3 p-3 border rounded-lg transition-colors",
                     script.enabled ? "hover:bg-muted/50" : "opacity-60 bg-muted/30"
                   )}
                 >
                   <Switch
                     checked={script.enabled}
                     onCheckedChange={() => handleToggleScript(script.id)}
+                    className="shrink-0"
                   />
-                  <div className="flex items-center gap-2">
+                  <div className="shrink-0">
                     {getScriptIcon(script.type, script.direction)}
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <p className="font-medium">{script.name}</p>
+                  <div className="flex-1 min-w-0 overflow-hidden">
+                    <div className="flex items-center gap-1.5 flex-wrap">
+                      <span className="font-medium text-sm truncate">{script.name}</span>
                       {getDirectionBadge(script.direction)}
                       {getCategoryBadge(script.category)}
-                      <Badge variant="secondary" className="text-xs">
-                        <Clock className="h-3 w-3 mr-1" />
-                        {script.trigger}
-                      </Badge>
                     </div>
-                    <p className="text-sm text-muted-foreground truncate mt-1">
-                      {script.content}
+                    <p className="text-xs text-muted-foreground truncate">
+                      {script.trigger}
                     </p>
-                    {script.category === "proactive" && script.schedule && (
-                      <p className="text-xs text-purple-600 mt-1">
-                        {script.schedule.enabled
-                          ? `Runs ${script.schedule.days.join(", ")} ${script.schedule.startTime}-${script.schedule.endTime}, max ${script.schedule.maxPerDay}/day`
-                          : "Schedule not configured"}
-                      </p>
-                    )}
                   </div>
-                  <div className="flex items-center gap-1">
+                  <div className="flex items-center gap-0.5 shrink-0">
                     <Button
                       variant="ghost"
                       size="icon"
+                      className="h-8 w-8"
                       title="Test AI"
                       onClick={() => {
                         setModalMode("test");
                         setActiveScript(script);
                       }}
                     >
-                      <Play className="h-4 w-4" />
+                      <Play className="h-3.5 w-3.5" />
                     </Button>
                     <Button
                       variant="ghost"
                       size="icon"
+                      className="h-8 w-8"
                       title="Edit Script"
                       onClick={() => {
                         setModalMode("edit");
                         setActiveScript(script);
                       }}
                     >
-                      <Pencil className="h-4 w-4" />
+                      <Pencil className="h-3.5 w-3.5" />
                     </Button>
                     {script.category === "proactive" && (
                       <Button
                         variant="ghost"
                         size="icon"
+                        className="h-8 w-8"
                         title="Schedule Settings"
                         onClick={() => setSchedulingScript(script)}
                       >
-                        <Settings2 className="h-4 w-4" />
+                        <Settings2 className="h-3.5 w-3.5" />
                       </Button>
                     )}
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="text-muted-foreground hover:text-destructive"
+                      className="h-8 w-8 text-muted-foreground hover:text-destructive"
                       title="Delete Script"
                       onClick={() => handleDeleteScript(script.id)}
                     >
