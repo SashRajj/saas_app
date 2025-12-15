@@ -40,7 +40,7 @@ const features = [
 const plans = [
   {
     name: "Text AI",
-    price: "$50",
+    price: "$49",
     description: "SMS automation for businesses",
     features: [
       "Missed call auto-text",
@@ -62,11 +62,10 @@ const plans = [
       "Voice customization",
       "Google Calendar sync",
     ],
-    popular: true,
   },
   {
     name: "Full AI Employee",
-    price: "$100",
+    price: "$99",
     description: "The complete package",
     features: [
       "Everything in Text AI",
@@ -74,6 +73,7 @@ const plans = [
       "Priority support",
       "Best value",
     ],
+    popular: true,
   },
 ];
 

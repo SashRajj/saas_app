@@ -7,7 +7,7 @@ import { Check, X } from "lucide-react";
 const plans = [
   {
     name: "Text AI",
-    price: "$50",
+    price: "$49",
     description: "SMS automation for businesses that want to capture every lead",
     features: [
       { name: "Missed call auto-text", included: true },
@@ -39,11 +39,10 @@ const plans = [
       { name: "Missed call auto-text", included: false },
       { name: "Drip follow-up campaigns", included: false },
     ],
-    popular: true,
   },
   {
     name: "Full AI Employee",
-    price: "$100",
+    price: "$99",
     description: "The complete AI employee that handles everything",
     features: [
       { name: "Everything in Text AI", included: true },
@@ -51,6 +50,7 @@ const plans = [
       { name: "Best value - save $25/month", included: true },
       { name: "Priority support", included: true },
     ],
+    popular: true,
   },
 ];
 

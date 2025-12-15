@@ -19,9 +19,9 @@ import {
 
 const planDetails = {
   trial: { name: "Trial", price: "$0", description: "7-day free trial" },
-  text_ai: { name: "Text AI", price: "$50/mo", description: "SMS automation, follow-ups, drip campaigns" },
+  text_ai: { name: "Text AI", price: "$49/mo", description: "SMS automation, follow-ups, drip campaigns" },
   voice_ai: { name: "Voice AI", price: "$75/mo", description: "AI calls, booking, transcripts" },
-  full_ai: { name: "Full AI Employee", price: "$100/mo", description: "Everything included" },
+  full_ai: { name: "Full AI Employee", price: "$99/mo", description: "Everything included" },
 };
 
 export default function AccountPage() {
